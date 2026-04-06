@@ -1,0 +1,666 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cantilever Group | Industrial Luxury Architecture</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#ffdad6",
+              "on-primary-container": "#4b3a00",
+              "on-tertiary-container": "#751819",
+              "surface-container-high": "#2a2a2a",
+              "outline-variant": "#4d4635",
+              "surface-container-highest": "#353534",
+              "on-error": "#690005",
+              "surface-container-lowest": "#0e0e0e",
+              "on-primary-fixed": "#241a00",
+              "secondary-fixed": "#f2dedd",
+              "surface-dim": "#131313",
+              "on-surface": "#e5e2e1",
+              "on-secondary-container": "#c7b4b4",
+              "on-primary-fixed-variant": "#584400",
+              "tertiary-fixed": "#ffdad7",
+              "primary-fixed-dim": "#ecc246",
+              "on-tertiary-fixed": "#410004",
+              "tertiary-fixed-dim": "#ffb3ad",
+              "inverse-surface": "#e5e2e1",
+              primary: "#ecc246",
+              "on-background": "#e5e2e1",
+              "tertiary-container": "#ff8179",
+              secondary: "#d5c2c2",
+              "secondary-container": "#534646",
+              "surface-variant": "#353534",
+              "surface-bright": "#3a3939",
+              "primary-container": "#c9a227",
+              "on-primary": "#3d2e00",
+              "surface-tint": "#ecc246",
+              surface: "#131313",
+              tertiary: "#ffb3ad",
+              "secondary-fixed-dim": "#d5c2c2",
+              outline: "#99907b",
+              "primary-fixed": "#ffe08e",
+              "on-surface-variant": "#d1c5af",
+              "surface-container-low": "#1c1b1b",
+              "error-container": "#93000a",
+              "inverse-primary": "#755b00",
+              "on-secondary-fixed-variant": "#514444",
+              background: "#131313",
+              "on-secondary-fixed": "#231919",
+              "inverse-on-surface": "#313030",
+              "surface-container": "#201f1f",
+              "on-secondary": "#392d2d",
+              error: "#ffb4ab",
+              "on-tertiary": "#640b0f",
+              "on-tertiary-fixed-variant": "#842322",
+            },
+            borderRadius: {
+              DEFAULT: "0px",
+              lg: "0px",
+              xl: "0px",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Inter"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #131313;
+        color: #e5e2e1;
+      }
+      .font-headline {
+        font-family: "Space Grotesk", sans-serif;
+      }
+      .blueprint-grid {
+        background-image: radial-gradient(circle, #4d4635 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.05;
+      }
+      .glass-nav {
+        background: rgba(19, 19, 19, 0.7);
+        backdrop-filter: blur(24px);
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+    <!-- TopAppBar -->
+    <nav
+      class="fixed top-0 w-full z-50 rounded-none bg-[#131313]/70 backdrop-blur-xl flex justify-between items-center px-8 py-6 w-full max-w-none"
+    >
+      <div class="text-xl font-black tracking-[-0.04em] text-[#ECC246] font-headline uppercase">Cantilever Group</div>
+      <div class="hidden md:flex gap-8 items-center">
+        <a class="font-bold tracking-tighter uppercase text-xs text-[#ECC246] border-b-2 border-[#ECC246] pb-1" href="#"
+          >Home</a
+        >
+        <a
+          class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246] transition-colors duration-300"
+          href="#"
+          >About</a
+        >
+        <a
+          class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246] transition-colors duration-300"
+          href="#"
+          >Portfolio</a
+        >
+        <a
+          class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246] transition-colors duration-300"
+          href="#"
+          >Process</a
+        >
+        <a
+          class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246] transition-colors duration-300"
+          href="#"
+          >Blog</a
+        >
+        <a
+          class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246] transition-colors duration-300"
+          href="#"
+          >Contact</a
+        >
+      </div>
+      <button
+        class="bg-[#C9A227] text-on-primary px-6 py-3 font-headline font-bold uppercase tracking-widest text-xs Active: scale-95 transition-transform"
+      >
+        Free Consultation
+      </button>
+    </nav>
+    <!-- SideNavBar (Inquiry Hub) -->
+    <aside
+      class="fixed right-0 top-1/2 -translate-y-1/2 rounded-none border-l border-[#4D4635]/30 shadow-[0px_24px_48px_rgba(0,0,0,0.5)] flex flex-col items-center py-4 w-12 z-40 bg-[#131313] group hover:w-48 transition-all duration-300 overflow-hidden"
+    >
+      <div class="flex flex-col items-center w-full gap-8">
+        <div class="flex flex-col items-center gap-2">
+          <span class="material-symbols-outlined text-[#ECC246]" style="font-variation-settings: &quot;FILL&quot; 1"
+            >chat</span
+          >
+          <span
+            class="hidden group-hover:block text-[10px] font-headline font-bold uppercase tracking-widest text-[#ECC246] text-center"
+            >Contact Us</span
+          >
+        </div>
+        <div class="h-px w-6 bg-outline-variant/30"></div>
+        <div class="hidden group-hover:flex flex-col px-4 text-center">
+          <span class="text-[10px] font-headline font-black text-[#ECC246] mb-1">Project Inquiry</span>
+          <p class="text-[8px] text-on-secondary-container leading-tight">
+            Start building your legacy with our elite team today.
+          </p>
+          <button class="mt-4 bg-[#C9A227] text-on-primary text-[10px] font-headline font-bold py-2">
+            QUICK MESSAGE
+          </button>
+        </div>
+      </div>
+    </aside>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20">
+      <div class="absolute inset-0 z-0">
+        <!-- <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div> -->
+        <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/50 to-transparent z-10"></div>
+        <img alt="Hero Construction" class="w-full h-full object-cover" data-alt="Cantilever Group" src="hero.webp" />
+      </div>
+      <div class="relative z-20 container mx-auto px-8">
+        <div class="max-w-4xl">
+          <span
+            class="inline-block bg-primary/10 text-primary border-l-4 border-primary px-4 py-2 text-xs font-bold tracking-[0.2em] uppercase mb-6"
+            >Established Precision</span
+          >
+
+          <h1 class="font-headline text-2xl md:text-6xl font-black leading-[0.9] uppercase mb-8">
+            Amanah<br />menghadirkan<br />karya yang<br /><span class="text-primary">kokoh</span>, Presisi , Indah
+          </h1>
+
+          <!-- Amanah dalam menghadirkan karya yang indah , kokoh dan presisi. -->
+
+          <p class="font-body text-xl text-on-secondary-container max-w-2xl mb-12 leading-relaxed">
+            Solusi konstruksi profesional untuk rumah, gedung, desain arsitektur yang amanah dengan kualitas terbaik. We
+            don't just build structures; we forge legacies.
+          </p>
+          <div class="flex flex-wrap gap-6">
+            <button
+              class="bg-primary-container text-on-primary px-10 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:bg-primary transition-all duration-300"
+            >
+              Konsultasi Gratis
+            </button>
+            <button
+              class="border border-outline text-on-surface px-10 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:bg-surface-bright transition-all duration-300"
+            >
+              Lihat Portfolio
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-12 left-8 flex items-center gap-4 text-outline text-xs font-bold tracking-widest uppercase"
+      >
+        <div class="w-12 h-px bg-primary"></div>
+        <span>Scroll to explore</span>
+      </div>
+    </section>
+    <!-- Trust Stats -->
+    <section class="bg-surface-container-lowest py-20 relative overflow-hidden">
+      <div class="blueprint-grid absolute inset-0"></div>
+      <div class="container mx-auto px-8 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+          <div class="border-l border-outline-variant/30 pl-8">
+            <div class="font-headline text-5xl font-black text-primary mb-2">250+</div>
+            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">
+              Projects Completed
+            </div>
+          </div>
+          <div class="border-l border-outline-variant/30 pl-8">
+            <div class="font-headline text-5xl font-black text-primary mb-2">15+</div>
+            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">
+              Years Experience
+            </div>
+          </div>
+          <div class="border-l border-outline-variant/30 pl-8">
+            <div class="font-headline text-5xl font-black text-primary mb-2">100%</div>
+            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">
+              Client Trust
+            </div>
+          </div>
+          <div class="border-l border-outline-variant/30 pl-8">
+            <div class="font-headline text-5xl font-black text-primary mb-2">45</div>
+            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">
+              Expert Engineers
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section class="py-32 bg-surface">
+      <div class="container mx-auto px-8">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div class="max-w-2xl">
+            <h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-4 leading-none">
+              Layanan Jasa<br /><span class="text-primary">Konstruksi Eksklusif</span>
+            </h2>
+            <p class="text-on-secondary-container">
+              Solusi arsitektur khusus yang dirancang dengan presisi dan kekuatan standar industri dan detail kemewahan
+              yang personal..
+            </p>
+          </div>
+          <div class="text-right">
+            <span class="text-outline-variant font-headline font-black text-8xl opacity-10">02</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-0 border border-outline-variant/20">
+          <!-- Service Item 1 -->
+          <div
+            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20"
+          >
+            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">architecture</span>
+            <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
+              Desain Arsitektur
+            </h3>
+            <p class="text-sm text-on-secondary-container mb-8">
+              Perancangan konsep dan gambar kerja untuk menghadirkan karya struktur modern yang berkualitas tinggi.
+            </p>
+            <div
+              class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+          <!-- Service Item 2 -->
+          <div
+            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20"
+          >
+            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">home</span>
+            <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
+              Rumah Pribadi
+            </h3>
+            <p class="text-sm text-on-secondary-container mb-8">
+              Hunian eksklusif yang dirancang khusus sesuai kebutuhan dan gaya hidup Anda.
+            </p>
+            <div
+              class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+          <!-- Service Item 3 -->
+          <div
+            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20"
+          >
+            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">apartment</span>
+            <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
+              Perumahan
+            </h3>
+            <p class="text-sm text-on-secondary-container mb-8">
+              Pengembangan kawasan hunian skala besar dengan standar efisiensi dan kualitas tinggi.
+            </p>
+            <div
+              class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+          <!-- Service Item 4 -->
+          <div
+            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20"
+          >
+            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">domain</span>
+            <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
+              Gedung Komersial
+            </h3>
+            <p class="text-sm text-on-secondary-container mb-8">
+              Pembangunan gedung bertaraf industri, termasuk perkantoran dan pusat bisnis modern.
+            </p>
+            <div
+              class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+          <!-- Service Item 5 -->
+          <div
+            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer"
+          >
+            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">Construction</span>
+            <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
+              Scaffolding Rental
+            </h3>
+            <p class="text-sm text-on-secondary-container mb-8">
+              Penyediaan scaffolding berkualitas profesional untuk mendukung proyek konstruksi.
+            </p>
+            <div
+              class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Projects (Bento-ish Grid) -->
+    <section class="py-32 bg-surface-container-lowest">
+      <div class="container mx-auto px-8">
+        <h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-16">
+          Featured <span class="text-primary">Portfolio</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="md:col-span-2 relative h-[500px] group overflow-hidden bg-surface-container">
+            <img
+              alt="Project 1"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+              data-alt="Bumi Darma Asri Surabaya"
+              src="porto1.webp"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+            <div class="absolute bottom-8 left-8">
+              <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block">Surabaya</span>
+              <h4 class="font-headline text-3xl font-black uppercase">Bumi Darma Asri</h4>
+            </div>
+          </div>
+          <div class="relative h-[500px] group overflow-hidden bg-surface-container">
+            <img
+              alt="Project 2"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+              data-alt="Rumah Bp Andre"
+              src="porto2.webp"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+            <div class="absolute bottom-8 left-8">
+              <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block">Batu, Malang</span>
+              <h4 class="font-headline text-3xl font-black uppercase">Rumah Bp Andre</h4>
+            </div>
+          </div>
+          <div class="relative h-[400px] group overflow-hidden bg-surface-container">
+            <img
+              alt="Project 3"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+              data-alt="Interior of a modern high-end architectural office with exposed concrete and warm wood accents"
+              src="porto3.webp"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+            <div class="absolute bottom-8 left-8">
+              <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block">Yogyakarta</span>
+              <h4 class="font-headline text-2xl font-black uppercase">Kost & Cafe Putri</h4>
+            </div>
+          </div>
+          <div class="md:col-span-2 relative h-[400px] group overflow-hidden bg-surface-container">
+            <img
+              alt="Project 4"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+              data-alt="Ultra-modern waterfront mansion with geometric architecture and large cantilevered roof"
+              src="porto4.webp"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+            <div class="absolute bottom-8 left-8">
+              <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block">Rumah dr Syam</span>
+              <h4 class="font-headline text-2xl font-black uppercase">Jakarta</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our Process -->
+    <section class="py-32 bg-surface relative overflow-hidden">
+      <div class="container mx-auto px-8">
+        <h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-20 text-center">
+          Tahapan Proses <span class="text-primary">Konstruksi</span>
+        </h2>
+        <div class="relative flex flex-col md:flex-row justify-between items-start gap-12">
+          <!-- Connection Line (Desktop) -->
+          <div class="hidden md:block absolute top-12 left-0 w-full h-px bg-outline-variant/30 z-0"></div>
+          <!-- Step 1 -->
+          <div class="relative z-10 flex-1 group">
+            <div
+              class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-4xl text-primary">groups</span>
+            </div>
+            <div class="font-headline text-xs font-black text-primary tracking-widest uppercase mb-4">Step 01</div>
+            <h4 class="font-headline text-xl font-bold uppercase mb-4">Konsultasi</h4>
+            <p class="text-sm text-on-secondary-container leading-relaxed">
+              Menentukan visi dan kebutuhan proyek Anda bersama tim arsitek profesional kami.
+            </p>
+          </div>
+          <!-- Step 2 -->
+          <div class="relative z-10 flex-1 group">
+            <div
+              class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-4xl text-primary">straighten</span>
+            </div>
+            <div class="font-headline text-xs font-black text-primary tracking-widest uppercase mb-4">Step 02</div>
+            <h4 class="font-headline text-xl font-bold uppercase mb-4">Survey</h4>
+            <p class="text-sm text-on-secondary-container leading-relaxed">
+              Survey teknis lahan dan analisis kondisi tanah untuk memastikan stabilitas proyek.
+            </p>
+          </div>
+          <!-- Step 3 -->
+          <div class="relative z-10 flex-1 group">
+            <div
+              class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-4xl text-primary">draw</span>
+            </div>
+            <div class="font-headline text-xs font-black text-primary tracking-widest uppercase mb-4">Step 03</div>
+            <h4 class="font-headline text-xl font-bold uppercase mb-4">Perencanaan</h4>
+            <p class="text-sm text-on-secondary-container leading-relaxed">
+              Penyusunan gambar kerja secara menyeluruh serta pengurusan izin struktur bangunan.
+            </p>
+          </div>
+          <!-- Step 4 -->
+          <div class="relative z-10 flex-1 group">
+            <div
+              class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-4xl text-primary">engineering</span>
+            </div>
+            <div class="font-headline text-xs font-black text-primary tracking-widest uppercase mb-4">Step 04</div>
+            <h4 class="font-headline text-xl font-bold uppercase mb-4">Konstruksi</h4>
+            <p class="text-sm text-on-secondary-container leading-relaxed">
+              Pelaksanaan pembangunan secara presisi oleh tim engineering Cantilever.
+            </p>
+          </div>
+          <!-- Step 5 -->
+          <div class="relative z-10 flex-1 group">
+            <div
+              class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-4xl text-primary">key</span>
+            </div>
+            <div class="font-headline text-xs font-black text-primary tracking-widest uppercase mb-4">Step 05</div>
+            <h4 class="font-headline text-xl font-bold uppercase mb-4">Serah Terima</h4>
+            <p class="text-sm text-on-secondary-container leading-relaxed">
+              Pemeriksaan akhir dan penyerahan resmi hasil proyek Anda dengan standar terbaik.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Why Choose Us -->
+    <section class="py-32 bg-surface-container-low border-y border-outline-variant/10">
+      <div class="container mx-auto px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div>
+            <h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-8 leading-[1.1]">
+              The Foundation <br />Of Our <span class="text-primary">Excellence</span>
+            </h2>
+            <p class="text-on-secondary-container mb-12 text-lg">
+              Kami memadukan pengalaman yang teruji dengan inovasi konstruksi modern untuk menghadirkan hasil yang
+              melampaui standar.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div class="flex gap-4">
+                <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                <div>
+                  <h5 class="font-headline font-bold uppercase mb-2">Expert Team</h5>
+                  <p class="text-xs text-on-secondary-container">
+                    Didukung oleh engineer bersertifikat dan arsitek berkelas.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="material-symbols-outlined text-primary text-3xl">diamond</span>
+                <div>
+                  <h5 class="font-headline font-bold uppercase mb-2">Unmatched Quality</h5>
+                  <p class="text-xs text-on-secondary-container">
+                    Menggunakan material pilihan dari supplier terpercaya.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="material-symbols-outlined text-primary text-3xl">schedule</span>
+                <div>
+                  <h5 class="font-headline font-bold uppercase mb-2">On-Time Delivery</h5>
+                  <p class="text-xs text-on-secondary-container">Komitmen penuh terhadap jadwal pengerjaan proyek.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="material-symbols-outlined text-primary text-3xl">gavel</span>
+                <div>
+                  <h5 class="font-headline font-bold uppercase mb-2">10-Year Warranty</h5>
+                  <p class="text-xs text-on-secondary-container">
+                    Jaminan 10 tahun struktur bangunan pada setiap proyek yang kami kerjakan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -top-12 -left-12 w-64 h-64 border-l border-t border-primary/30 z-0"></div>
+            <img
+              alt="Excellence"
+              class="relative z-10 w-full grayscale contrast-125 border border-outline-variant/30"
+              data-alt="Industrial Construction site with heavy machinery and steel beams during golden hour"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHLL2GNx_shy8Ku3jb3n93s25GXDIChJPS5uK-L1IyKhknqiRQP08ENK5phQLFtFDkg13X4ZjhLLymkqEbODw5l-jjLJlJnzCzePq1f7Ru5NskaVD7zi8k19HikJNY2ijPvn7JnkrvGSbpyn3mSPwFVePJMudnXqN9qaRBSabBiEvy7QPaEykeIso3LWaIJbUDZw_CrLnYKGh-P1FuFQwAThA9DVZrJWF2EZudPwS7yH1HzIm-dzdIoWlVA1gVwe54sNcGlIvLCWg"
+            />
+            <div class="absolute -bottom-10 -right-10 bg-primary p-10 z-20">
+              <span class="font-headline font-black text-4xl text-on-primary">SINCE 2009</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Slider (Static Layout) -->
+    <section class="py-32 bg-surface">
+      <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16">
+            <span class="material-symbols-outlined text-6xl text-primary opacity-20">format_quote</span>
+          </div>
+          <div class="text-center">
+            <p class="font-headline text-3xl md:text-4xl font-medium italic mb-12 leading-snug">
+              "Hasil kerja Cantilever Group melampaui ekspektasi saya. Presisi dan detail pengerjaan villa saya
+              benar-benar memuaskan."
+            </p>
+            <div class="flex items-center justify-center gap-6">
+              <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
+                <img
+                  alt="Client"
+                  class="w-full h-full object-cover"
+                  data-alt="Professional man in suit, portrait style, neutral background"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_xCnOuXXemuuoICgDouWp10nTXAwzVxyl-OicTKLPweKhuY6CEbBJfa3ITCXaxmSQ7Vz0qyn9Pg1NuirnZzboafxHGc1vFSnsEP55l0bWh-qwlfhTfclsYXpd2KVPb9G-F27JZjp4nNWQWcxwnQuV1ZRxbZUNUdS7HKej_OzvQWiGca-hQYLfTqQreQPkMpkgxjJyR6H-HNJYgiofujruF3xxO3h3nlIqrWn6JxlCPidlLcgCzpgjJZCRI0g4ksg0q3dlmBOXFmA"
+                />
+              </div>
+              <div class="text-left">
+                <h6 class="font-headline font-bold uppercase text-primary">Marcus Sterling</h6>
+                <p class="text-xs text-on-secondary-container uppercase tracking-widest">CEO, Sterling Properties</p>
+              </div>
+            </div>
+          </div>
+          <!-- Slider Nav -->
+          <div class="flex justify-center mt-16 gap-4">
+            <button
+              class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
+            >
+              <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <button
+              class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
+            >
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Final CTA -->
+    <section class="relative py-40 bg-surface-container-lowest overflow-hidden">
+      <div class="absolute inset-0 blueprint-grid opacity-10"></div>
+      <div class="container mx-auto px-8 text-center relative z-10">
+        <h2 class="font-headline text-6xl md:text-8xl font-black uppercase tracking-tighter mb-12 leading-[0.8]">
+          Ready To Build <br /><span class="text-primary">The Future?</span>
+        </h2>
+        <p class="text-on-secondary-container text-xl max-w-2xl mx-auto mb-16">
+          Connect with our senior consultants today and let's start the blueprint for your next architectural
+          masterpiece.
+        </p>
+        <div class="flex flex-wrap justify-center gap-8">
+          <button
+            class="bg-primary-container text-on-primary px-16 py-6 font-headline font-bold uppercase tracking-widest text-lg hover:scale-105 transition-transform duration-300"
+          >
+            Contact Our Elite Team
+          </button>
+          <button
+            class="bg-tertiary-container text-on-tertiary-container px-16 py-6 font-headline font-bold uppercase tracking-widest text-lg hover:scale-105 transition-transform duration-300"
+          >
+            View Urgent Ops
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="bg-[#0E0E0E] flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full border-t border-[#4D4635]/20"
+    >
+      <div class="flex flex-col items-center md:items-start mb-8 md:mb-0">
+        <div class="text-lg font-bold text-[#ECC246] font-headline uppercase mb-4">Cantilever Group</div>
+        <div class="font-['Inter'] text-sm tracking-wide text-[#C7B4B4]">
+          © 2024 Cantilever Group. ALL RIGHTS RESERVED.
+        </div>
+      </div>
+      <div class="flex gap-8 items-center">
+        <a
+          class="font-['Inter'] text-sm tracking-wide text-[#C7B4B4] hover:text-[#ECC246] hover:underline decoration-2 underline-offset-8 transition-opacity duration-200"
+          href="#"
+          >Privacy Policy</a
+        >
+        <a
+          class="font-['Inter'] text-sm tracking-wide text-[#C7B4B4] hover:text-[#ECC246] hover:underline decoration-2 underline-offset-8 transition-opacity duration-200"
+          href="#"
+          >Terms of Service</a
+        >
+        <a
+          class="font-['Inter'] text-sm tracking-wide text-[#C7B4B4] hover:text-[#ECC246] hover:underline decoration-2 underline-offset-8 transition-opacity duration-200"
+          href="#"
+          >Cookie Policy</a
+        >
+        <a
+          class="font-['Inter'] text-sm tracking-wide text-[#C7B4B4] hover:text-[#ECC246] hover:underline decoration-2 underline-offset-8 transition-opacity duration-200"
+          href="#"
+          >Accessibility</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
