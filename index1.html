@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="dark" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -15,22 +15,106 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      id="font-awesome-5-pro-css"
+      href="https://bintorobuild.co.id/wp-content/themes/tm-renovation/fonts/font-awesome5-pro/css/all.min.css?ver=5.15.4"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="font-awesome-v4-shims-css"
+      href="https://bintorobuild.co.id/wp-content/themes/tm-renovation/fonts/font-awesome5-free/css/v4-shims.min.css?ver=5.15.4"
+      type="text/css"
+      media="all"
+    />
+
     <script id="tailwind-config">
+      // tailwind.config = {
+      //   darkMode: "class",
+      //   theme: {
+      //     extend: {
+      //       colors: {
+      //         surface: "#131313",
+      //         "on-surface": "#e5e2e1",
+      //         primary: "#ecc246",
+      //         "on-primary": "#3d2e00",
+      //         "surface-container-low": "#1c1b1b",
+      //         "surface-container-highest": "#353534",
+      //         "surface-container-lowest": "#0e0e0e",
+      //         "on-secondary-container": "#c7b4b4",
+      //         "outline-variant": "#4d4635",
+      //         outline: "#99907b",
+      //       },
+      //       fontFamily: {
+      //         // Update Inter -> Plus Jakarta Sans
+      //         headline: ["Exo", "sans-serif"],
+      //         body: ["Plus Jakarta Sans", "sans-serif"],
+      //         label: ["Plus Jakarta Sans", "sans-serif"],
+      //       },
+      //       // Z-index tambahan untuk mobile menu
+      //       zIndex: {
+      //         "60": "60",
+      //         "70": "70",
+      //       }
+      //     },
+      //   },
+      // };
+
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              surface: "#131313",
-              "on-surface": "#e5e2e1",
-              primary: "#ecc246",
-              "on-primary": "#3d2e00",
-              "surface-container-low": "#1c1b1b",
-              "surface-container-highest": "#353534",
-              "surface-container-lowest": "#0e0e0e",
-              "on-secondary-container": "#c7b4b4",
+              "on-error-container": "#ffdad6",
+              "on-primary-container": "#4b3a00",
+              "on-tertiary-container": "#751819",
+              "surface-container-high": "#2a2a2a",
               "outline-variant": "#4d4635",
+              "surface-container-highest": "#353534",
+              "on-error": "#690005",
+              "surface-container-lowest": "#0e0e0e",
+              "on-primary-fixed": "#241a00",
+              "secondary-fixed": "#f2dedd",
+              "surface-dim": "#131313",
+              "on-surface": "#e5e2e1",
+              "on-secondary-container": "#c7b4b4",
+              "on-primary-fixed-variant": "#584400",
+              "tertiary-fixed": "#ffdad7",
+              "primary-fixed-dim": "#ecc246",
+              "on-tertiary-fixed": "#410004",
+              "tertiary-fixed-dim": "#ffb3ad",
+              "inverse-surface": "#e5e2e1",
+              primary: "#ecc246",
+              "on-background": "#e5e2e1",
+              "tertiary-container": "#ff8179",
+              secondary: "#d5c2c2",
+              "secondary-container": "#534646",
+              "surface-variant": "#353534",
+              "surface-bright": "#3a3939",
+              "primary-container": "#c9a227",
+              "on-primary": "#3d2e00",
+              "surface-tint": "#ecc246",
+              surface: "#131313",
+              tertiary: "#ffb3ad",
+              "secondary-fixed-dim": "#d5c2c2",
               outline: "#99907b",
+              "primary-fixed": "#ffe08e",
+              "on-surface-variant": "#d1c5af",
+              "surface-container-low": "#1c1b1b",
+              "error-container": "#93000a",
+              "inverse-primary": "#755b00",
+              "on-secondary-fixed-variant": "#514444",
+              background: "#131313",
+              "on-secondary-fixed": "#231919",
+              "inverse-on-surface": "#313030",
+              "surface-container": "#201f1f",
+              "on-secondary": "#392d2d",
+              error: "#ffb4ab",
+              "on-tertiary": "#640b0f",
+              "on-tertiary-fixed-variant": "#842322",
             },
             fontFamily: {
               // Update Inter -> Plus Jakarta Sans
@@ -40,9 +124,9 @@
             },
             // Z-index tambahan untuk mobile menu
             zIndex: {
-              "60": "60",
-              "70": "70",
-            }
+              60: "60",
+              70: "70",
+            },
           },
         },
       };
@@ -62,13 +146,31 @@
         visibility: visible;
       }
     </style>
+
+    <style>
+      /* Efek redup gambar Hero */
+      .hero-img {
+        filter: brightness(0.5);
+        transition: filter 0.5s ease;
+      }
+      .hero-container:hover .hero-img {
+        filter: brightness(0.3);
+      }
+    </style>
   </head>
   <body class="bg-surface text-on-surface">
     <input type="checkbox" id="menu-toggle" class="hidden peer" />
-    
-    <label for="menu-toggle" id="menu-overlay" class="fixed inset-0 bg-black/70 z-60 backdrop-blur-sm opacity-0 visibility-hidden transition-all duration-300 cursor-pointer"></label>
 
-    <div id="mobile-menu" class="fixed top-0 left-0 bottom-0 w-[80%] max-w-sm bg-[#131313] z-70 translate-x-[-100%] transition-transform duration-300 ease-in-out border-r border-[#4D4635]/30 p-8 flex flex-col justify-between">
+    <label
+      for="menu-toggle"
+      id="menu-overlay"
+      class="fixed inset-0 bg-black/70 z-60 backdrop-blur-sm opacity-0 invisible transition-all duration-300 cursor-pointer"
+    ></label>
+
+    <div
+      id="mobile-menu"
+      class="fixed top-0 left-0 bottom-0 w-[80%] max-w-sm bg-[#131313] z-70 translate-x-[-100%] transition-transform duration-300 ease-in-out border-r border-[#4D4635]/30 p-8 flex flex-col justify-between"
+    >
       <div class="flex flex-col gap-10">
         <div class="flex justify-between items-center mb-6">
           <div class="flex items-center gap-3">
@@ -79,57 +181,105 @@
             <span class="material-symbols-outlined text-[#ECC246]">close</span>
           </label>
         </div>
-        
-        <div class="flex flex-col gap-6">
-          <a class="font-bold tracking-tighter uppercase text-sm text-[#ECC246]" href="#">Home</a>
-          <a class="font-bold tracking-tighter uppercase text-sm text-[#C7B4B4] hover:text-[#ECC246]" href="#">About</a>
-          <a class="font-bold tracking-tighter uppercase text-sm text-[#C7B4B4] hover:text-[#ECC246]" href="#">Portfolio</a>
-          <a class="font-bold tracking-tighter uppercase text-sm text-[#C7B4B4] hover:text-[#ECC246]" href="#">Process</a>
-          <a class="font-bold tracking-tighter uppercase text-sm text-[#C7B4B4] hover:text-[#ECC246]" href="#">Blog</a>
-          <a class="font-bold tracking-tighter uppercase text-sm text-[#C7B4B4] hover:text-[#ECC246]" href="#">Contact</a>
-        </div>
+
+        <nav class="flex flex-col gap-6 overflow-y-auto">
+          <a href="#" class="text-sm font-bold uppercase text-[#ECC246]">Home</a>
+
+          <div class="flex flex-col gap-4">
+            <span class="text-sm font-bold uppercase text-[#C7B4B4]">Layanan</span>
+            <div class="pl-4 flex flex-col gap-3 border-l border-[#ECC246]/20">
+              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Jasa Renovasi Rumah</a>
+              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Jasa Bangun Rumah</a>
+              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Kontraktor Kost</a>
+              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Kontraktor Kolam Renang</a>
+              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Kontraktor Ruko</a>
+              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Jasa Pengurusan IMB</a>
+              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Jasa Desain Arsitek</a>
+            </div>
+          </div>
+
+          <a href="#" class="text-sm font-bold uppercase text-[#C7B4B4]">Portfolio</a>
+          <a href="#" class="text-sm font-bold uppercase text-[#C7B4B4]">Contact</a>
+        </nav>
       </div>
 
-      <button class="w-full bg-[#C9A227] text-on-primary px-6 py-4 font-headline font-bold uppercase tracking-widest text-xs Active:scale-95 transition-transform">
+      <button
+        class="w-full bg-[#C9A227] text-on-primary px-6 py-4 font-headline font-bold uppercase tracking-widest text-xs Active:scale-95 transition-transform"
+      >
         Consultation
       </button>
     </div>
 
-    <nav class="fixed top-0 w-full z-50 rounded-none bg-[#131313]/70 backdrop-blur-xl flex justify-between items-center px-6 md:px-8 py-2">
-      <label for="menu-toggle" class="md:hidden cursor-pointer">
-        <span class="material-symbols-outlined text-[#ECC246] text-3xl">menu</span>
-      </label>
+    <!-- menu desktop -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-md flex justify-between items-center px-6 md:px-12 py-4"
+    >
+      <div class="flex items-center gap-4">
+        <label for="menu-toggle" class="md:hidden cursor-pointer flex items-center">
+          <span class="material-symbols-outlined text-[#ECC246] text-3xl">menu</span>
+        </label>
+        <div class="flex items-center gap-3">
+          <img src="logo.png" width="45px" />
+          <div class="hidden sm:block text-xl font-black text-[#ECC246] font-headline uppercase tracking-tighter">
+            Cantilever Group
+          </div>
+        </div>
+      </div>
 
-      <div class="flex items-center gap-3">
-        <img src="logo.png" width="50px" />
-        <div class="text-lg md:text-xl font-black tracking-[-0.04em] text-[#ECC246] font-headline uppercase">Cantilever Group</div>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-[#ECC246]">Home</a>
+
+        <div class="group relative py-4">
+          <button
+            class="text-[10px] font-bold uppercase tracking-widest text-[#C7B4B4] group-hover:text-[#ECC246] flex items-center gap-1"
+          >
+            Layanan <span class="material-symbols-outlined text-xs">expand_more</span>
+          </button>
+          <div
+            class="absolute top-full left-0 w-56 bg-[#1c1b1b] border border-[#4D4635]/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-4 gap-3 shadow-2xl"
+          >
+            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Jasa Renovasi Rumah</a>
+            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Jasa Bangun Rumah</a>
+            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Kontraktor Kost</a>
+            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Kontraktor Kolam Renang</a>
+            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Kontraktor Ruko</a>
+            <hr class="border-[#4D4635]/20" />
+            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Jasa Pengurusan IMB</a>
+            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Jasa Desain Arsitek</a>
+          </div>
+        </div>
+
+        <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-[#C7B4B4] hover:text-[#ECC246]"
+          >Portfolio</a
+        >
+        <button
+          class="bg-[#ECC246] text-[#3d2e00] px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-white transition-colors"
+        >
+          Free Consultation
+        </button>
       </div>
-      
-      <div class="hidden md:flex gap-8 items-center">
-        <a class="font-bold tracking-tighter uppercase text-xs text-[#ECC246] border-b-2 border-[#ECC246] pb-1" href="#">Home</a>
-        <a class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246]" href="#">About</a>
-        <a class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246]" href="#">Portfolio</a>
-        <a class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246]" href="#">Process</a>
-        <a class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246]" href="#">Blog</a>
-        <a class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246]" href="#">Contact</a>
-      </div>
-      
-      <button class="hidden md:block bg-[#C9A227] text-on-primary px-6 py-3 font-headline font-bold uppercase tracking-widest text-xs Active:scale-95 transition-transform">
-        Free Consultation
-      </button>
     </nav>
-
-    <aside class="fixed right-0 top-1/2 -translate-y-1/2 rounded-none border-l border-[#4D4635]/30 shadow-lg flex flex-col items-center py-4 w-12 z-40 bg-[#131313] group hover:w-48 transition-all duration-300 overflow-hidden">
+    <!-- menu desktop end-->
+    <aside
+      class="fixed right-0 top-1/2 -translate-y-1/2 rounded-none border-l border-[#4D4635]/30 shadow-lg flex flex-col items-center py-4 w-12 z-40 bg-[#131313] group hover:w-48 transition-all duration-300 overflow-hidden"
+    >
       <div class="flex flex-col items-center w-full gap-8">
         <div class="flex flex-col items-center gap-2">
           <span class="material-symbols-outlined text-[#ECC246]">chat</span>
-          <span class="hidden group-hover:block text-[10px] font-headline font-bold uppercase tracking-widest text-[#ECC246] text-center">Contact Us</span>
+          <span
+            class="hidden group-hover:block text-[10px] font-headline font-bold uppercase tracking-widest text-[#ECC246] text-center"
+            >Contact Us</span
+          >
         </div>
         <div class="h-px w-6 bg-outline-variant/30"></div>
         <div class="hidden group-hover:flex flex-col px-4 text-center">
           <span class="text-[10px] font-headline font-black text-[#ECC246] mb-1">Project Inquiry</span>
-          <p class="text-[8px] text-on-secondary-container leading-tight">Start building your legacy with our elite team today.</p>
-          <button class="mt-4 bg-[#C9A227] text-on-primary text-[10px] font-headline font-bold py-2">QUICK MESSAGE</button>
+          <p class="text-[8px] text-on-secondary-container leading-tight">
+            Start building your legacy with our elite team today.
+          </p>
+          <button class="mt-4 bg-[#C9A227] text-on-primary text-[10px] font-headline font-bold py-2">
+            QUICK MESSAGE
+          </button>
         </div>
       </div>
     </aside>
@@ -141,20 +291,34 @@
       </div>
       <div class="relative z-20 container mx-auto px-8">
         <div class="max-w-4xl">
-          <span class="inline-block bg-primary/10 text-primary border-l-4 border-primary px-4 py-2 text-xs font-bold tracking-[0.2em] uppercase mb-6">Established Precision</span>
+          <span
+            class="inline-block bg-primary/10 text-primary border-l-4 border-primary px-4 py-2 text-xs font-bold tracking-[0.2em] uppercase mb-6"
+            >Established Precision</span
+          >
           <h1 class="font-headline text-3xl md:text-6xl font-black leading-[0.9] uppercase mb-8">
             Amanah<br />menghadirkan<br />karya yang<br /><span class="text-primary">kokoh</span>, Presisi, Indah
           </h1>
           <p class="font-body text-base text-on-secondary-container max-w-2xl mb-12 leading-relaxed">
-            Solusi konstruksi profesional untuk rumah, gedung, desain arsitektur yang amanah dengan kualitas terbaik. We don't just build structures; we forge legacies.
+            Solusi konstruksi profesional untuk rumah, gedung, desain arsitektur yang amanah dengan kualitas terbaik. We
+            don't just build structures; we forge legacies.
           </p>
           <div class="flex flex-wrap gap-6">
-            <button class="bg-primary-container text-on-primary px-10 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:bg-primary transition-all duration-300">Konsultasi Gratis</button>
-            <button class="border border-outline text-on-surface px-10 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:bg-surface-bright transition-all duration-300">Lihat Portfolio</button>
+            <button
+              class="bg-primary-container text-on-primary px-10 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:bg-primary transition-all duration-300"
+            >
+              Konsultasi Gratis
+            </button>
+            <button
+              class="border border-outline text-on-surface px-10 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:bg-surface-bright transition-all duration-300"
+            >
+              Lihat Portfolio
+            </button>
           </div>
         </div>
       </div>
-      <div class="absolute bottom-12 left-8 flex items-center gap-4 text-outline text-xs font-bold tracking-widest uppercase">
+      <div
+        class="absolute bottom-12 left-8 flex items-center gap-4 text-outline text-xs font-bold tracking-widest uppercase"
+      >
         <div class="w-12 h-px bg-primary"></div>
         <span>Scroll to explore</span>
       </div>
@@ -166,19 +330,27 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
           <div class="border-l border-outline-variant/30 pl-8">
             <div class="font-headline text-5xl font-black text-primary mb-2">280+</div>
-            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">Total Proyek</div>
+            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">
+              Total Proyek
+            </div>
           </div>
           <div class="border-l border-outline-variant/30 pl-8">
             <div class="font-headline text-5xl font-black text-primary mb-2">15+</div>
-            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">Tahun Pengalaman</div>
+            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">
+              Tahun Pengalaman
+            </div>
           </div>
           <div class="border-l border-outline-variant/30 pl-8">
             <div class="font-headline text-5xl font-black text-primary mb-2">7</div>
-            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">Proyek Berjalan</div>
+            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">
+              Proyek Berjalan
+            </div>
           </div>
           <div class="border-l border-outline-variant/30 pl-8">
             <div class="font-headline text-5xl font-black text-primary mb-2">25</div>
-            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">Tim Ahli</div>
+            <div class="text-xs font-headline font-bold uppercase tracking-widest text-on-secondary-container">
+              Tim Ahli
+            </div>
           </div>
         </div>
       </div>
@@ -192,49 +364,115 @@
               Layanan Jasa<br /><span class="text-primary">Konstruksi Eksklusif</span>
             </h2>
             <p class="text-on-secondary-container">
-              Solusi arsitektur khusus yang dirancang dengan presisi standar industri dan detail kemewahan yang personal.
+              Solusi arsitektur khusus yang dirancang dengan presisi standar industri dan detail kemewahan yang
+              personal.
             </p>
           </div>
           <div class="text-right">
-            <span class="text-outline-variant font-headline font-black text-8xl opacity-10">02</span>
+            <span class="text-outline-variant font-headline font-black text-8xl opacity-10"></span>
           </div>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer flex flex-col justify-between overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1621370258169-d900456da871?q=80&w=600" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-500" alt="Architecture Design" />
-            <div class="relative z-10 flex flex-col justify-between h-full">
-              <div>
-                <span class="material-symbols-outlined text-4xl text-primary mb-12 block">architecture</span>
-                <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">Desain Arsitektur</h3>
-                <p class="text-sm text-on-secondary-container mb-8">Perancangan konsep dan gambar kerja untuk menghadirkan karya struktur modern yang berkualitas tinggi.</p>
-              </div>
-            </div>
-            <div class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500 z-20"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-0 border border-outline-variant/20">
+          <!-- Service Item 1 -->
+          <div
+            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20 overflow-hidden"
+          >
+            <img
+              src="archt.webp"
+              class="absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-80 group-hover:scale-110 transition-all duration-500"
+              alt="Architecture Design"
+            />
+            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">architecture</span>
+            <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
+              Desain Arsitektur
+            </h3>
+            <p class="text-sm text-on-secondary-container mb-8">
+              Perancangan konsep dan gambar kerja untuk menghadirkan karya struktur modern yang berkualitas tinggi.
+            </p>
+            <div
+              class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"
+            ></div>
           </div>
-          
-          <div class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer flex flex-col justify-between overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1605276374104-ddd2ba1658ef?q=80&w=600" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-500" alt="Custom Home" />
-            <div class="relative z-10 flex flex-col justify-between h-full">
-              <div>
-                <span class="material-symbols-outlined text-4xl text-primary mb-12 block">home</span>
-                <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">Rumah Pribadi</h3>
-                <p class="text-sm text-on-secondary-container mb-8">Hunian eksklusif yang dirancang khusus sesuai kebutuhan dan gaya hidup Anda.</p>
-              </div>
-            </div>
-            <div class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500 z-20"></div>
+          <!-- Service Item 2 -->
+          <div
+            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20 overflow-hidden"
+          >
+            <img
+              src="porto4.webp"
+              class="absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-80 group-hover:scale-110 transition-all duration-500"
+              alt="Architecture Design"
+            />
+            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">home</span>
+            <h3 class="font-headline text-xl font-bold uppercase mb-4 grup-hover:text-red transition-colors">
+              Rumah Pribadi
+            </h3>
+            <p class="text-sm text-on-secondary-container mb-8">
+              Hunian eksklusif yang dirancang khusus sesuai kebutuhan dan gaya hidup Anda.
+            </p>
+            <div
+              class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"
+            ></div>
           </div>
-          
-          <div class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer flex flex-col justify-between overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1574958327297-b188c00bdfbf?q=80&w=600" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-500" alt="Commercial Building" />
-            <div class="relative z-10 flex flex-col justify-between h-full">
-              <div>
-                <span class="material-symbols-outlined text-4xl text-primary mb-12 block">domain</span>
-                <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">Gedung Komersial</h3>
-                <p class="text-sm text-on-secondary-container mb-8">Pembangunan gedung bertaraf industri, termasuk perkantoran dan pusat bisnis modern.</p>
-              </div>
-            </div>
-            <div class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500 z-20"></div>
+          <!-- Service Item 3 -->
+          <div
+            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20 overflow-hidden"
+          >
+            <img
+              src="porto1.webp"
+              class="absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-80 group-hover:scale-110 transition-all duration-500"
+              alt="Perumahan"
+            />
+            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">apartment</span>
+            <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
+              Perumahan
+            </h3>
+            <p class="text-sm text-on-secondary-container mb-8">
+              Pengembangan kawasan hunian skala besar dengan standar efisiensi dan kualitas tinggi.
+            </p>
+            <div
+              class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+          <!-- Service Item 4 -->
+          <div
+            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20 overflow-hidden"
+          >
+            <img
+              src="ktr.webp"
+              class="absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-80 group-hover:scale-110 transition-all duration-500"
+              alt="Office"
+            />
+            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">domain</span>
+            <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
+              Gedung Komersial
+            </h3>
+            <p class="text-sm text-on-secondary-container mb-8">
+              Pembangunan gedung bertaraf industri, termasuk perkantoran dan pusat bisnis modern.
+            </p>
+            <div
+              class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"
+            ></div>
+          </div>
+          <!-- Service Item 5 -->
+          <div
+            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer overflow-hidden"
+          >
+            <img
+              src="scaffold.webp"
+              class="absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-80 group-hover:scale-110 transition-all duration-500"
+              alt="Office"
+            />
+            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">Construction</span>
+            <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
+              Scaffolding Rental
+            </h3>
+            <p class="text-sm text-on-secondary-container mb-8">
+              Penyediaan scaffolding berkualitas profesional untuk mendukung proyek konstruksi.
+            </p>
+            <div
+              class="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"
+            ></div>
           </div>
         </div>
       </div>
@@ -247,7 +485,11 @@
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="md:col-span-2 relative h-[500px] group overflow-hidden bg-surface-container">
-            <img alt="Project 1" class="w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-110" src="porto1.webp" />
+            <img
+              alt="Project 1"
+              class="w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-110"
+              src="porto1.webp"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
             <div class="absolute bottom-8 left-8">
               <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block">Surabaya</span>
@@ -255,58 +497,190 @@
             </div>
           </div>
           <div class="relative h-[500px] group overflow-hidden bg-surface-container">
-            <img alt="Project 2" class="w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-110" src="porto2.webp" />
+            <img
+              alt="Project 2"
+              class="w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-110"
+              src="porto2.webp"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
             <div class="absolute bottom-8 left-8">
               <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block">Batu, Malang</span>
               <h4 class="font-headline text-3xl font-black uppercase">Rumah Bp Andre</h4>
             </div>
           </div>
+          <div class="relative h-[400px] group overflow-hidden bg-surface-container">
+            <img
+              alt="Project 3"
+              class="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+              data-alt="Interior of a modern high-end architectural office with exposed concrete and warm wood accents"
+              src="porto3.webp"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+            <div class="absolute bottom-8 left-8">
+              <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block">Yogyakarta</span>
+              <h4 class="font-headline text-2xl font-black uppercase">Kost & Cafe Putri</h4>
+            </div>
+          </div>
+          <div class="md:col-span-2 relative h-[400px] group overflow-hidden bg-surface-container">
+            <img
+              alt="Project 4"
+              class="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+              data-alt="Ultra-modern waterfront mansion with geometric architecture and large cantilevered roof"
+              src="porto4.webp"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+            <div class="absolute bottom-8 left-8">
+              <span class="text-xs font-bold text-primary tracking-widest uppercase mb-2 block">Rumah dr Syam</span>
+              <h4 class="font-headline text-2xl font-black uppercase">Jakarta</h4>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
+    <!-- tahapan konstruksi -->
     <section class="py-32 bg-surface relative overflow-hidden">
       <div class="container mx-auto px-8">
-        <h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-20 text-center">Tahapan Proses <span class="text-primary">Konstruksi</span></h2>
+        <h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-20 text-center">
+          Tahapan Proses <span class="text-primary">Konstruksi</span>
+        </h2>
         <div class="relative flex flex-col md:flex-row justify-between items-start gap-12">
+          <!-- Connection Line (Desktop) -->
           <div class="hidden md:block absolute top-12 left-0 w-full h-px bg-outline-variant/30 z-0"></div>
+          <!-- Step 1 -->
           <div class="relative z-10 flex-1 group">
-            <div class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300">
+            <div
+              class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300"
+            >
               <span class="material-symbols-outlined text-4xl text-primary">groups</span>
             </div>
             <div class="font-headline text-xs font-black text-primary tracking-widest uppercase mb-4">Step 01</div>
             <h4 class="font-headline text-xl font-bold uppercase mb-4">Konsultasi</h4>
-            <p class="text-sm text-on-secondary-container leading-relaxed">Menentukan visi dan kebutuhan proyek Anda bersama tim arsitek profesional kami.</p>
+            <p class="text-sm text-on-secondary-container leading-relaxed">
+              Menentukan visi dan kebutuhan proyek Anda bersama tim arsitek profesional kami.
+            </p>
           </div>
+          <!-- Step 2 -->
           <div class="relative z-10 flex-1 group">
-            <div class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300">
+            <div
+              class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300"
+            >
               <span class="material-symbols-outlined text-4xl text-primary">straighten</span>
             </div>
             <div class="font-headline text-xs font-black text-primary tracking-widest uppercase mb-4">Step 02</div>
             <h4 class="font-headline text-xl font-bold uppercase mb-4">Survey</h4>
-            <p class="text-sm text-on-secondary-container leading-relaxed">Survey teknis lahan dan analisis kondisi tanah untuk memastikan stabilitas proyek.</p>
+            <p class="text-sm text-on-secondary-container leading-relaxed">
+              Survey teknis lahan dan analisis kondisi tanah untuk memastikan stabilitas proyek.
+            </p>
           </div>
+          <!-- Step 3 -->
           <div class="relative z-10 flex-1 group">
-            <div class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300">
+            <div
+              class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300"
+            >
               <span class="material-symbols-outlined text-4xl text-primary">draw</span>
             </div>
             <div class="font-headline text-xs font-black text-primary tracking-widest uppercase mb-4">Step 03</div>
             <h4 class="font-headline text-xl font-bold uppercase mb-4">Perencanaan</h4>
-            <p class="text-sm text-on-secondary-container leading-relaxed">Penyusunan gambar kerja secara menyeluruh serta pengurusan izin struktur bangunan.</p>
+            <p class="text-sm text-on-secondary-container leading-relaxed">
+              Penyusunan gambar kerja secara menyeluruh serta pengurusan izin struktur bangunan.
+            </p>
           </div>
+          <!-- Step 4 -->
           <div class="relative z-10 flex-1 group">
-            <div class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300">
-              <span class="material-symbols-outlined text-4xl text-primary">key</span>
+            <div
+              class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-4xl text-primary">engineering</span>
             </div>
             <div class="font-headline text-xs font-black text-primary tracking-widest uppercase mb-4">Step 04</div>
+            <h4 class="font-headline text-xl font-bold uppercase mb-4">Konstruksi</h4>
+            <p class="text-sm text-on-secondary-container leading-relaxed">
+              Pelaksanaan pembangunan secara presisi oleh tim engineering Cantilever.
+            </p>
+          </div>
+          <!-- Step 5 -->
+          <div class="relative z-10 flex-1 group">
+            <div
+              class="w-24 h-24 bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-8 group-hover:border-primary transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-4xl text-primary">key</span>
+            </div>
+            <div class="font-headline text-xs font-black text-primary tracking-widest uppercase mb-4">Step 05</div>
             <h4 class="font-headline text-xl font-bold uppercase mb-4">Serah Terima</h4>
-            <p class="text-sm text-on-secondary-container leading-relaxed">Pemeriksaan akhir dan penyerahan resmi hasil proyek Anda dengan standar terbaik.</p>
+            <p class="text-sm text-on-secondary-container leading-relaxed">
+              Pemeriksaan akhir dan penyerahan resmi hasil proyek Anda dengan standar terbaik.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Why Choose Us -->
+    <section class="py-32 bg-surface-container-low border-y border-outline-variant/10">
+      <div class="container mx-auto px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div>
+            <h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-8 leading-[1.1]">
+              The Foundation <br />Of Our <span class="text-primary">Excellence</span>
+            </h2>
+            <p class="text-on-secondary-container mb-12 text-lg">
+              Kami memadukan pengalaman yang teruji dengan inovasi konstruksi modern untuk menghadirkan hasil yang
+              melampaui standar.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div class="flex gap-4">
+                <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                <div>
+                  <h5 class="font-headline font-bold uppercase mb-2">Expert Team</h5>
+                  <p class="text-xs text-on-secondary-container">
+                    Didukung oleh engineer bersertifikat dan arsitek berkelas.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="material-symbols-outlined text-primary text-3xl">diamond</span>
+                <div>
+                  <h5 class="font-headline font-bold uppercase mb-2">Unmatched Quality</h5>
+                  <p class="text-xs text-on-secondary-container">
+                    Menggunakan material pilihan dari supplier terpercaya.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="material-symbols-outlined text-primary text-3xl">schedule</span>
+                <div>
+                  <h5 class="font-headline font-bold uppercase mb-2">On-Time Delivery</h5>
+                  <p class="text-xs text-on-secondary-container">Komitmen penuh terhadap jadwal pengerjaan proyek.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="material-symbols-outlined text-primary text-3xl">gavel</span>
+                <div>
+                  <h5 class="font-headline font-bold uppercase mb-2">10-Year Warranty</h5>
+                  <p class="text-xs text-on-secondary-container">
+                    Jaminan 10 tahun struktur bangunan pada setiap proyek yang kami kerjakan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -top-12 -left-12 w-64 h-64 border-l border-t border-primary/30 z-0"></div>
+            <img
+              alt="Excellence"
+              class="relative z-10 w-full contrast-125 border border-outline-variant/30"
+              data-alt="Industrial Construction site with heavy machinery and steel beams during golden hour"
+              src="https://plus.unsplash.com/premium_photo-1661304604755-a2f282152e14?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+            <div class="absolute -bottom-10 -right-10 bg-primary p-10 z-20">
+              <span class="font-headline font-black text-4xl text-on-primary">SEJAK 2009</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimoni -->
     <section class="py-32 bg-surface">
       <div class="container mx-auto px-8">
         <div class="max-w-4xl mx-auto">
@@ -314,10 +688,17 @@
             <span class="material-symbols-outlined text-6xl text-primary opacity-20">format_quote</span>
           </div>
           <div class="text-center">
-            <p class="font-headline text-3xl md:text-4xl font-medium italic mb-12 leading-snug">"Hasil kerja Cantilever Group melampaui ekspektasi saya. Presisi dan detail pengerjaan villa saya benar-benar memuaskan."</p>
+            <p class="font-headline text-3xl md:text-4xl font-medium italic mb-12 leading-snug">
+              "Hasil kerja Cantilever Group melampaui ekspektasi saya. Presisi dan detail pengerjaan villa saya
+              benar-benar memuaskan."
+            </p>
             <div class="flex items-center justify-center gap-6">
               <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
-                <img alt="Client" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_xCnOuXXemuuoICgDouWp10nTXAwzVxyl-OicTKLPweKhuY6CEbBJfa3ITCXaxmSQ7Vz0qyn9Pg1NuirnZzboafxHGc1vFSnsEP55l0bWh-qwlfhTfclsYXpd2KVPb9G-F27JZjp4nNWQWcxwnQuV1ZRxbZUNUdS7HKej_OzvQWiGca-hQYLfTqQreQPkMpkgxjJyR6H-HNJYgiofujruF3xxO3h3nlIqrWn6JxlCPidlLcgCzpgjJZCRI0g4ksg0q3dlmBOXFmA" />
+                <img
+                  alt="Client"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_xCnOuXXemuuoICgDouWp10nTXAwzVxyl-OicTKLPweKhuY6CEbBJfa3ITCXaxmSQ7Vz0qyn9Pg1NuirnZzboafxHGc1vFSnsEP55l0bWh-qwlfhTfclsYXpd2KVPb9G-F27JZjp4nNWQWcxwnQuV1ZRxbZUNUdS7HKej_OzvQWiGca-hQYLfTqQreQPkMpkgxjJyR6H-HNJYgiofujruF3xxO3h3nlIqrWn6JxlCPidlLcgCzpgjJZCRI0g4ksg0q3dlmBOXFmA"
+                />
               </div>
               <div class="text-left">
                 <h6 class="font-headline font-bold uppercase text-primary">M. Sadam</h6>
@@ -328,62 +709,124 @@
         </div>
       </div>
     </section>
+    <!-- Final CTA -->
+    <section class="relative py-40 bg-surface-container-lowest overflow-hidden">
+      <div class="absolute inset-0 blueprint-grid opacity-10"></div>
+      <div class="container mx-auto px-8 text-center relative z-10">
+        <h2 class="font-headline text-6xl md:text-8xl font-black uppercase tracking-tighter mb-12 leading-[0.8]">
+          Siap Mewujudkan <br /><span class="text-primary">Masa Depan Anda?</span>
+        </h2>
+        <p class="text-on-secondary-container text-xl max-w-2xl mx-auto mb-16">
+          Diskusikan kebutuhan proyek Anda bersama tim ahli kami, dan mulai wujudkan impian anda!
+        </p>
+        <div class="flex flex-wrap justify-center gap-8">
+          <button
+            class="bg-primary-container text-on-primary px-16 py-6 font-headline font-bold uppercase tracking-widest text-lg hover:scale-105 transition-transform duration-300"
+          >
+            Hubungi Tim Ahli Kami
+          </button>
+          <button
+            class="bg-tertiary-container text-on-tertiary-container px-16 py-6 font-headline font-bold uppercase tracking-widest text-lg hover:scale-105 transition-transform duration-300"
+          >
+            Lihat Layanan Prioritas
+          </button>
+        </div>
+      </div>
+    </section>
 
     <footer class="bg-[#0E0E0E] py-16 px-12 border-t border-[#4D4635]/20">
       <div class="container mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div class="sm:col-span-2 flex flex-col sm:flex-row gap-12">
             <div class="flex flex-col items-start min-w-[200px]">
               <div class="flex items-center gap-3 mb-4">
                 <img src="logo.png" width="40px" />
                 <div class="text-xl font-black text-[#ECC246] font-headline uppercase">Cantilever</div>
               </div>
-              <div class="text-sm tracking-wide text-[#C7B4B4] mb-2 leading-relaxed max-w-[200px]">Industrial Luxury Architecture</div>
+              <div class="text-sm tracking-wide text-[#C7B4B4] mb-2 leading-relaxed max-w-[200px]">
+                Industrial Luxury Architecture
+              </div>
             </div>
-            
+
             <div class="flex flex-1 flex-col sm:flex-row gap-8">
               <div class="flex flex-col gap-3">
-                <div class="text-sm font-bold text-[#ECC246] font-headline uppercase border-b-2 border-[#ECC246]/50 pb-2 mb-2">Jasa Kami</div>
+                <div
+                  class="text-sm font-bold text-[#ECC246] font-headline uppercase border-b-2 border-[#ECC246]/50 pb-2 mb-2"
+                >
+                  Jasa Kami
+                </div>
                 <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors">Jasa Arsitek</a>
-                <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors">Bangun Rumah Pribadi</a>
+                <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors"
+                  >Bangun Rumah Pribadi</a
+                >
                 <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors">Gedung Komersial</a>
-              </div>
-              <div class="flex flex-col gap-3 pt-10 sm:pt-11"> <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors">Perumahan Skala Besar</a>
+                <!-- </div>
+              <div class="flex flex-col gap-3 pt-10 sm:pt-11"> -->
+                <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors"
+                  >Perumahan Skala Besar</a
+                >
                 <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors">Renovasi Eksklusif</a>
                 <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors">Scaffolding Rental</a>
               </div>
             </div>
           </div>
-          
+
           <div class="flex flex-col gap-3">
-            <div class="text-sm font-bold text-[#ECC246] font-headline uppercase border-b-2 border-[#ECC246]/50 pb-2 mb-2">Kantor Pusat</div>
+            <div
+              class="text-sm font-bold text-[#ECC246] font-headline uppercase border-b-2 border-[#ECC246]/50 pb-2 mb-2"
+            >
+              Kantor Pusat
+            </div>
             <div class="flex gap-3">
               <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">location_on</span>
               <p class="text-sm text-[#C7B4B4] leading-relaxed">Grha Cantilever, Jl. Sudirman Kav. 50, Jakarta Pusat</p>
             </div>
-            <div class="flex gap-3">
+            <!-- <div class="flex gap-3">
               <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">call</span>
-              <p class="text-sm text-[#C7B4B4]">150-123</p>
+              <p class="text-sm text-[#C7B4B4]">0341-999999</p>
             </div>
             <div class="flex gap-3">
               <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">mail</span>
               <p class="text-sm text-[#C7B4B4]">marketing@cantilever.group</p>
+            </div> -->
+
+            <div
+              class="text-sm font-bold text-[#ECC246] font-headline uppercase border-b-2 border-[#ECC246]/50 pb-2 mb-2 mt-6"
+            >
+              Kantor Cabang
             </div>
-          </div>
-          
-          <div class="flex flex-col gap-3">
-            <div class="text-sm font-bold text-[#ECC246] font-headline uppercase border-b-2 border-[#ECC246]/50 pb-2 mb-2">Lokasi Cabang</div>
             <div class="flex gap-3">
-              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">storefront</span>
+              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">location_on</span>
               <p class="text-sm text-[#C7B4B4] leading-relaxed">Bojonegoro Creative Hub, Bojonegoro, Jatim</p>
             </div>
             <div class="flex gap-3">
-              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">villa</span>
-              <p class="text-sm text-[#C7B4B4] leading-relaxed">The Solo Mansion, Colomadu, Solo, Jateng</p>
+              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">location_on</span>
+              <p class="text-sm text-[#C7B4B4] leading-relaxed">Sengkaling Regency, Dau, Malang</p>
+            </div>
+          </div>
+          <!-- kontak -->
+          <div class="flex flex-col gap-3">
+            <div
+              class="text-sm font-bold text-[#ECC246] font-headline uppercase border-b-2 border-[#ECC246]/50 pb-2 mb-2"
+            >
+              Contact Us
+            </div>
+            <div class="flex gap-3">
+              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">call</span>
+              <p class="text-sm text-[#C7B4B4] leading-relaxed">0341-999999</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">mail</span>
+              <p class="text-sm text-[#C7B4B4] leading-relaxed">marketing@cantilever.co.id</p>
+            </div>
+            <div class="flex gap-3">
+              <!-- <i class="fa-brands fa-square-whatsapp"></i> -->
+              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">mobile_chat</span>
+              <p class="text-sm text-[#C7B4B4] leading-relaxed">WA : 081122334455</p>
             </div>
           </div>
         </div>
-        
+
         <div class="border-t border-[#4D4635]/20 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div class="text-sm text-[#C7B4B4]">© 2024 Cantilever Group. ALL RIGHTS RESERVED.</div>
           <div class="flex gap-8 items-center flex-wrap justify-center">
@@ -393,6 +836,6 @@
           </div>
         </div>
       </div>
-    </footer
+    </footer>
   </body>
 </html>
