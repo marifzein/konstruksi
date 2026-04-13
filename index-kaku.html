@@ -1,68 +1,51 @@
 <!doctype html>
+
 <html class="dark" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Cantilever Group | Industrial Luxury Architecture</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Exo:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-      rel="stylesheet"
-    />
 
     <link
-      rel="stylesheet"
-      id="font-awesome-5-pro-css"
-      href="https://bintorobuild.co.id/wp-content/themes/tm-renovation/fonts/font-awesome5-pro/css/all.min.css?ver=5.15.4"
-      type="text/css"
-      media="all"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900&display=swap"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
     <link
-      rel="stylesheet"
-      id="font-awesome-v4-shims-css"
-      href="https://bintorobuild.co.id/wp-content/themes/tm-renovation/fonts/font-awesome5-free/css/v4-shims.min.css?ver=5.15.4"
-      type="text/css"
-      media="all"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900&display=swap"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900&display=swap" />
+    </noscript>
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
     <script id="tailwind-config">
-      // tailwind.config = {
-      //   darkMode: "class",
-      //   theme: {
-      //     extend: {
-      //       colors: {
-      //         surface: "#131313",
-      //         "on-surface": "#e5e2e1",
-      //         primary: "#ecc246",
-      //         "on-primary": "#3d2e00",
-      //         "surface-container-low": "#1c1b1b",
-      //         "surface-container-highest": "#353534",
-      //         "surface-container-lowest": "#0e0e0e",
-      //         "on-secondary-container": "#c7b4b4",
-      //         "outline-variant": "#4d4635",
-      //         outline: "#99907b",
-      //       },
-      //       fontFamily: {
-      //         // Update Inter -> Plus Jakarta Sans
-      //         headline: ["Exo", "sans-serif"],
-      //         body: ["Plus Jakarta Sans", "sans-serif"],
-      //         label: ["Plus Jakarta Sans", "sans-serif"],
-      //       },
-      //       // Z-index tambahan untuk mobile menu
-      //       zIndex: {
-      //         "60": "60",
-      //         "70": "70",
-      //       }
-      //     },
-      //   },
-      // };
-
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -116,16 +99,16 @@
               "on-tertiary": "#640b0f",
               "on-tertiary-fixed-variant": "#842322",
             },
-            fontFamily: {
-              // Update Inter -> Plus Jakarta Sans
-              headline: ["Exo", "sans-serif"],
-              body: ["Plus Jakarta Sans", "sans-serif"],
-              label: ["Plus Jakarta Sans", "sans-serif"],
+            borderRadius: {
+              DEFAULT: "0px",
+              lg: "0px",
+              xl: "0px",
+              full: "9999px",
             },
-            // Z-index tambahan untuk mobile menu
-            zIndex: {
-              60: "60",
-              70: "70",
+            fontFamily: {
+              headline: ["Inter"],
+              body: ["Inter"],
+              label: ["Inter"],
             },
           },
         },
@@ -133,139 +116,91 @@
     </script>
     <style>
       body {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Inter", sans-serif;
         background-color: #131313;
         color: #e5e2e1;
       }
-      /* Gbr 1: Mobile Menu Triggers (Pure CSS) */
-      #menu-toggle:checked ~ #mobile-menu {
-        transform: translateX(0);
+      .font-headline {
+        font-family: "Exo", sans-serif;
       }
-      #menu-toggle:checked ~ #menu-overlay {
-        opacity: 1;
-        visibility: visible;
+      .blueprint-grid {
+        background-image: radial-gradient(circle, #4d4635 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.05;
       }
-    </style>
-
-    <style>
-      /* Efek redup gambar Hero */
-      .hero-img {
-        filter: brightness(0.5);
-        transition: filter 0.5s ease;
+      .glass-nav {
+        background: rgba(19, 19, 19, 0.7);
+        backdrop-filter: blur(24px);
       }
-      .hero-container:hover .hero-img {
-        filter: brightness(0.3);
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
       }
     </style>
   </head>
-  <body class="bg-surface text-on-surface">
-    <input type="checkbox" id="menu-toggle" class="hidden peer" />
-
-    <label
-      for="menu-toggle"
-      id="menu-overlay"
-      class="fixed inset-0 bg-black/70 z-60 backdrop-blur-sm opacity-0 invisible transition-all duration-300 cursor-pointer"
-    ></label>
-
-    <div
-      id="mobile-menu"
-      class="fixed top-0 left-0 bottom-0 w-[80%] max-w-sm bg-[#131313] z-70 translate-x-[-100%] transition-transform duration-300 ease-in-out border-r border-[#4D4635]/30 p-8 flex flex-col justify-between"
-    >
-      <div class="flex flex-col gap-10">
-        <div class="flex justify-between items-center mb-6">
-          <div class="flex items-center gap-3">
-            <img src="logo.png" width="40px" />
-            <div class="text-lg font-black tracking-[-0.04em] text-[#ECC246] font-headline uppercase">Cantilever</div>
-          </div>
-          <label for="menu-toggle" class="cursor-pointer">
-            <span class="material-symbols-outlined text-[#ECC246]">close</span>
-          </label>
-        </div>
-
-        <nav class="flex flex-col gap-6 overflow-y-auto">
-          <a href="#" class="text-sm font-bold uppercase text-[#ECC246]">Home</a>
-
-          <div class="flex flex-col gap-4">
-            <span class="text-sm font-bold uppercase text-[#C7B4B4]">Layanan</span>
-            <div class="pl-4 flex flex-col gap-3 border-l border-[#ECC246]/20">
-              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Jasa Renovasi Rumah</a>
-              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Jasa Bangun Rumah</a>
-              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Kontraktor Kost</a>
-              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Kontraktor Kolam Renang</a>
-              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Kontraktor Ruko</a>
-              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Jasa Pengurusan IMB</a>
-              <a href="#" class="text-xs uppercase text-[#C7B4B4]">Jasa Desain Arsitek</a>
-            </div>
-          </div>
-
-          <a href="#" class="text-sm font-bold uppercase text-[#C7B4B4]">Portfolio</a>
-          <a href="#" class="text-sm font-bold uppercase text-[#C7B4B4]">Contact</a>
-        </nav>
-      </div>
-
-      <button
-        class="w-full bg-[#C9A227] text-on-primary px-6 py-4 font-headline font-bold uppercase tracking-widest text-xs Active:scale-95 transition-transform"
-      >
-        Consultation
-      </button>
-    </div>
-
-    <!-- menu desktop -->
+  <body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+    <!-- TopAppBar -->
     <nav
-      class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-md flex justify-between items-center px-6 md:px-12 py-4"
+      class="fixed top-0 w-full z-50 rounded-none bg-[#131313]/70 backdrop-blur-xl flex justify-between items-center px-8 py-2 w-full max-w-none"
     >
-      <div class="flex items-center gap-4">
-        <label for="menu-toggle" class="md:hidden cursor-pointer flex items-center">
-          <span class="material-symbols-outlined text-[#ECC246] text-3xl">menu</span>
-        </label>
-        <div class="flex items-center gap-3">
-          <img src="logo.png" width="45px" />
-          <div class="hidden sm:block text-xl font-black text-[#ECC246] font-headline uppercase tracking-tighter">
-            Cantilever Group
-          </div>
-        </div>
+      <div class="flex items-center gap-3">
+        <img src="logo.png" width="50px" />
+        <div class="text-xl font-black tracking-[-0.04em] text-[#ECC246] font-headline uppercase">Cantilever Group</div>
       </div>
-
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-[#ECC246]">Home</a>
-
-        <div class="group relative py-4">
-          <button
-            class="text-[10px] font-bold uppercase tracking-widest text-[#C7B4B4] group-hover:text-[#ECC246] flex items-center gap-1"
-          >
-            Layanan <span class="material-symbols-outlined text-xs">expand_more</span>
-          </button>
-          <div
-            class="absolute top-full left-0 w-56 bg-[#1c1b1b] border border-[#4D4635]/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-4 gap-3 shadow-2xl"
-          >
-            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Jasa Renovasi Rumah</a>
-            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Jasa Bangun Rumah</a>
-            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Kontraktor Kost</a>
-            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Kontraktor Kolam Renang</a>
-            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Kontraktor Ruko</a>
-            <hr class="border-[#4D4635]/20" />
-            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Jasa Pengurusan IMB</a>
-            <a href="#" class="text-[10px] uppercase text-[#C7B4B4] hover:text-[#ECC246]">Jasa Desain Arsitek</a>
-          </div>
-        </div>
-
-        <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-[#C7B4B4] hover:text-[#ECC246]"
+      <div class="hidden md:flex gap-8 items-center">
+        <a class="font-bold tracking-tighter uppercase text-xs text-[#ECC246] border-b-2 border-[#ECC246] pb-1" href="#"
+          >Home</a
+        >
+        <a
+          class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246] transition-colors duration-300"
+          href="#"
+          >About</a
+        >
+        <a
+          class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246] transition-colors duration-300"
+          href="#"
           >Portfolio</a
         >
-        <button
-          class="bg-[#ECC246] text-[#3d2e00] px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-white transition-colors"
+        <a
+          class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246] transition-colors duration-300"
+          href="#"
+          >Process</a
         >
-          Free Consultation
-        </button>
+        <a
+          class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246] transition-colors duration-300"
+          href="#"
+          >Blog</a
+        >
+        <a
+          class="font-bold tracking-tighter uppercase text-xs text-[#C7B4B4] pb-1 hover:text-[#ECC246] transition-colors duration-300"
+          href="#"
+          >Contact</a
+        >
       </div>
+      <a
+        href="https://wa.me/6285330048180?text=Halo%20saya%20tertarik%20menggunakan%20jasa%20anda"
+        class="hidden md:inline-block bg-[#C9A227] text-on-primary px-6 py-3 font-headline font-bold uppercase tracking-widest text-xs Active: scale-95 transition-transform"
+        target="_blank"
+      >
+        <!-- <button
+        class="hidden md:inline-block bg-[#C9A227] text-on-primary px-6 py-3 font-headline font-bold uppercase tracking-widest text-xs Active: scale-95 transition-transform"
+      > -->
+        Free Consultation</a
+      >
+      <!-- </button> -->
     </nav>
-    <!-- menu desktop end-->
+    <!-- SideNavBar (Inquiry Hub) -->
     <aside
-      class="fixed right-0 top-1/2 -translate-y-1/2 rounded-none border-l border-[#4D4635]/30 shadow-lg flex flex-col items-center py-4 w-12 z-40 bg-[#131313] group hover:w-48 transition-all duration-300 overflow-hidden"
+      class="fixed right-0 top-1/2 -translate-y-1/2 rounded-none border-l border-[#4D4635]/30 shadow-[0px_24px_48px_rgba(0,0,0,0.5)] flex flex-col items-center py-4 w-12 z-40 bg-[#131313] group hover:w-48 transition-all duration-300 overflow-hidden"
     >
       <div class="flex flex-col items-center w-full gap-8">
         <div class="flex flex-col items-center gap-2">
-          <span class="material-symbols-outlined text-[#ECC246]">chat</span>
+          <span class="material-symbols-outlined text-[#ECC246]" style="font-variation-settings: &quot;FILL&quot; 1"
+            >chat</span
+          >
           <span
             class="hidden group-hover:block text-[10px] font-headline font-bold uppercase tracking-widest text-[#ECC246] text-center"
             >Contact Us</span
@@ -275,19 +210,25 @@
         <div class="hidden group-hover:flex flex-col px-4 text-center">
           <span class="text-[10px] font-headline font-black text-[#ECC246] mb-1">Project Inquiry</span>
           <p class="text-[8px] text-on-secondary-container leading-tight">
-            Start building your legacy with our elite team today.
+            <!-- Start building your legacy with our elite team today. -->
+            Mulai bangun fondasi digital bisnis Anda bersama tim kami.
           </p>
-          <button class="mt-4 bg-[#C9A227] text-on-primary text-[10px] font-headline font-bold py-2">
-            QUICK MESSAGE
-          </button>
+
+          <a
+            href="https://wa.me/6285330048180?text=Halo%20saya%20tertarik%20menggunakan%20jasa%20anda"
+            class="mt-4 bg-[#C9A227] text-on-primary text-[10px] font-headline font-bold py-2"
+            target="_blank"
+            >Pesan Cepat</a
+          >
         </div>
       </div>
     </aside>
-
+    <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20">
       <div class="absolute inset-0 z-0">
+        <!-- <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div> -->
         <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/50 to-transparent z-10"></div>
-        <img alt="Hero Construction" class="w-full h-full object-cover" src="hero.webp" />
+        <img alt="Hero Construction" class="w-full h-full object-cover" data-alt="Cantilever Group" src="hero.webp" />
       </div>
       <div class="relative z-20 container mx-auto px-8">
         <div class="max-w-4xl">
@@ -295,9 +236,13 @@
             class="inline-block bg-primary/10 text-primary border-l-4 border-primary px-4 py-2 text-xs font-bold tracking-[0.2em] uppercase mb-6"
             >Established Precision</span
           >
-          <h1 class="font-headline text-3xl md:text-6xl font-black leading-[0.9] uppercase mb-8">
-            Amanah<br />menghadirkan<br />karya yang<br /><span class="text-primary">kokoh</span>, Presisi, Indah
+
+          <h1 class="font-headline text-2xl md:text-6xl font-black leading-[0.9] uppercase mb-8">
+            Amanah<br />menghadirkan<br />karya yang<br /><span class="text-primary">kokoh</span>, Presisi , Indah
           </h1>
+
+          <!-- Amanah dalam menghadirkan karya yang indah , kokoh dan presisi. -->
+
           <p class="font-body text-base text-on-secondary-container max-w-2xl mb-12 leading-relaxed">
             Solusi konstruksi profesional untuk rumah, gedung, desain arsitektur yang amanah dengan kualitas terbaik. We
             don't just build structures; we forge legacies.
@@ -316,6 +261,7 @@
           </div>
         </div>
       </div>
+      <!-- Scroll Indicator -->
       <div
         class="absolute bottom-12 left-8 flex items-center gap-4 text-outline text-xs font-bold tracking-widest uppercase"
       >
@@ -323,7 +269,7 @@
         <span>Scroll to explore</span>
       </div>
     </section>
-
+    <!-- Trust Stats -->
     <section class="bg-surface-container-lowest py-20 relative overflow-hidden">
       <div class="blueprint-grid absolute inset-0"></div>
       <div class="container mx-auto px-8 relative z-10">
@@ -355,8 +301,8 @@
         </div>
       </div>
     </section>
-
-    <section class="py-32 bg-surface">
+    <!-- Services Section -->
+    <section class="py-12 bg-surface">
       <div class="container mx-auto px-8">
         <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div class="max-w-2xl">
@@ -364,30 +310,24 @@
               Layanan Jasa<br /><span class="text-primary">Konstruksi Eksklusif</span>
             </h2>
             <p class="text-on-secondary-container">
-              Solusi arsitektur khusus yang dirancang dengan presisi standar industri dan detail kemewahan yang
-              personal.
+              Solusi arsitektur khusus yang dirancang dengan presisi dan kekuatan standar industri dan detail kemewahan
+              yang personal.
             </p>
           </div>
           <div class="text-right">
             <span class="text-outline-variant font-headline font-black text-8xl opacity-10"></span>
           </div>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-5 gap-0 border border-outline-variant/20">
           <!-- Service Item 1 -->
           <div
-            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20 overflow-hidden"
+            class="group relative bg-surface-container-low p-6 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20"
           >
-            <img
-              src="archt.webp"
-              class="absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-80 group-hover:scale-110 transition-all duration-500"
-              alt="Architecture Design"
-            />
-            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">architecture</span>
+            <span class="material-symbols-outlined text-4xl text-primary mb-6 block">architecture</span>
             <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
               Desain Arsitektur
             </h3>
-            <p class="text-sm text-on-secondary-container mb-8">
+            <p class="text-sm text-on-secondary-container mb-5">
               Perancangan konsep dan gambar kerja untuk menghadirkan karya struktur modern yang berkualitas tinggi.
             </p>
             <div
@@ -396,15 +336,10 @@
           </div>
           <!-- Service Item 2 -->
           <div
-            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20 overflow-hidden"
+            class="group relative bg-surface-container-low p-6 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20"
           >
-            <img
-              src="porto4.webp"
-              class="absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-80 group-hover:scale-110 transition-all duration-500"
-              alt="Architecture Design"
-            />
-            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">home</span>
-            <h3 class="font-headline text-xl font-bold uppercase mb-4 grup-hover:text-red transition-colors">
+            <span class="material-symbols-outlined text-4xl text-primary mb-6 block">home</span>
+            <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
               Rumah Pribadi
             </h3>
             <p class="text-sm text-on-secondary-container mb-8">
@@ -416,14 +351,9 @@
           </div>
           <!-- Service Item 3 -->
           <div
-            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20 overflow-hidden"
+            class="group relative bg-surface-container-low p-6 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20"
           >
-            <img
-              src="porto1.webp"
-              class="absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-80 group-hover:scale-110 transition-all duration-500"
-              alt="Perumahan"
-            />
-            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">apartment</span>
+            <span class="material-symbols-outlined text-4xl text-primary mb-6 block">apartment</span>
             <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
               Perumahan
             </h3>
@@ -436,14 +366,9 @@
           </div>
           <!-- Service Item 4 -->
           <div
-            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20 overflow-hidden"
+            class="group relative bg-surface-container-low p-6 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer border-r border-outline-variant/20"
           >
-            <img
-              src="ktr.webp"
-              class="absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-80 group-hover:scale-110 transition-all duration-500"
-              alt="Office"
-            />
-            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">domain</span>
+            <span class="material-symbols-outlined text-4xl text-primary mb-6 block">domain</span>
             <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
               Gedung Komersial
             </h3>
@@ -456,18 +381,13 @@
           </div>
           <!-- Service Item 5 -->
           <div
-            class="group relative bg-surface-container-low p-10 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer overflow-hidden"
+            class="group relative bg-surface-container-low p-6 hover:bg-surface-container-highest transition-all duration-500 cursor-pointer"
           >
-            <img
-              src="scaffold.webp"
-              class="absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-80 group-hover:scale-110 transition-all duration-500"
-              alt="Office"
-            />
-            <span class="material-symbols-outlined text-4xl text-primary mb-12 block">Construction</span>
+            <span class="material-symbols-outlined text-4xl text-primary mb-6 block">Construction</span>
             <h3 class="font-headline text-xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
               Scaffolding Rental
             </h3>
-            <p class="text-sm text-on-secondary-container mb-8">
+            <p class="text-sm text-on-secondary-container mb-5">
               Penyediaan scaffolding berkualitas profesional untuk mendukung proyek konstruksi.
             </p>
             <div
@@ -477,8 +397,8 @@
         </div>
       </div>
     </section>
-
-    <section class="py-32 bg-surface-container-lowest">
+    <!-- Featured Projects (Bento-ish Grid) -->
+    <section class="py-12 bg-surface-container-lowest">
       <div class="container mx-auto px-8">
         <h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-16">
           Featured <span class="text-primary">Portfolio</span>
@@ -487,7 +407,8 @@
           <div class="md:col-span-2 relative h-[500px] group overflow-hidden bg-surface-container">
             <img
               alt="Project 1"
-              class="w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-110"
+              class="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+              data-alt="Bumi Darma Asri Surabaya"
               src="porto1.webp"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
@@ -499,7 +420,8 @@
           <div class="relative h-[500px] group overflow-hidden bg-surface-container">
             <img
               alt="Project 2"
-              class="w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-110"
+              class="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+              data-alt="Rumah Bp Andre"
               src="porto2.webp"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
@@ -537,7 +459,7 @@
         </div>
       </div>
     </section>
-    <!-- tahapan konstruksi -->
+    <!-- Our Process -->
     <section class="py-32 bg-surface relative overflow-hidden">
       <div class="container mx-auto px-8">
         <h2 class="font-headline text-5xl font-black uppercase tracking-tighter mb-20 text-center">
@@ -614,7 +536,6 @@
         </div>
       </div>
     </section>
-
     <!-- Why Choose Us -->
     <section class="py-32 bg-surface-container-low border-y border-outline-variant/10">
       <div class="container mx-auto px-8">
@@ -679,8 +600,7 @@
         </div>
       </div>
     </section>
-
-    <!-- testimoni -->
+    <!-- Testimonials Slider (Static Layout) -->
     <section class="py-32 bg-surface">
       <div class="container mx-auto px-8">
         <div class="max-w-4xl mx-auto">
@@ -697,6 +617,7 @@
                 <img
                   alt="Client"
                   class="w-full h-full object-cover"
+                  data-alt="Professional man in suit, portrait style, neutral background"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_xCnOuXXemuuoICgDouWp10nTXAwzVxyl-OicTKLPweKhuY6CEbBJfa3ITCXaxmSQ7Vz0qyn9Pg1NuirnZzboafxHGc1vFSnsEP55l0bWh-qwlfhTfclsYXpd2KVPb9G-F27JZjp4nNWQWcxwnQuV1ZRxbZUNUdS7HKej_OzvQWiGca-hQYLfTqQreQPkMpkgxjJyR6H-HNJYgiofujruF3xxO3h3nlIqrWn6JxlCPidlLcgCzpgjJZCRI0g4ksg0q3dlmBOXFmA"
                 />
               </div>
@@ -706,6 +627,19 @@
               </div>
             </div>
           </div>
+          <!-- Slider Nav -->
+          <div class="flex justify-center mt-16 gap-4">
+            <button
+              class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
+            >
+              <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <button
+              class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all"
+            >
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -713,7 +647,7 @@
     <section class="relative py-40 bg-surface-container-lowest overflow-hidden">
       <div class="absolute inset-0 blueprint-grid opacity-10"></div>
       <div class="container mx-auto px-8 text-center relative z-10">
-        <h2 class="font-headline text-6xl md:text-8xl font-black uppercase tracking-tighter mb-12 leading-[0.8]">
+        <h2 class="font-headline text-3xl md:text-6xl font-black uppercase tracking-tighter mb-12 leading-[0.8]">
           Siap Mewujudkan <br /><span class="text-primary">Masa Depan Anda?</span>
         </h2>
         <p class="text-on-secondary-container text-xl max-w-2xl mx-auto mb-16">
@@ -733,108 +667,37 @@
         </div>
       </div>
     </section>
-
-    <footer class="bg-[#0E0E0E] py-16 px-12 border-t border-[#4D4635]/20">
-      <div class="container mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          <div class="sm:col-span-2 flex flex-col sm:flex-row gap-12">
-            <div class="flex flex-col items-start min-w-[200px]">
-              <div class="flex items-center gap-3 mb-4">
-                <img src="logo.png" width="40px" />
-                <div class="text-xl font-black text-[#ECC246] font-headline uppercase">Cantilever</div>
-              </div>
-              <div class="text-sm tracking-wide text-[#C7B4B4] mb-2 leading-relaxed max-w-[200px]">
-                Industrial Luxury Architecture
-              </div>
-            </div>
-
-            <div class="flex flex-1 flex-col sm:flex-row gap-8">
-              <div class="flex flex-col gap-3">
-                <div
-                  class="text-sm font-bold text-[#ECC246] font-headline uppercase border-b-2 border-[#ECC246]/50 pb-2 mb-2"
-                >
-                  Jasa Kami
-                </div>
-                <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors">Jasa Arsitek</a>
-                <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors"
-                  >Bangun Rumah Pribadi</a
-                >
-                <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors">Gedung Komersial</a>
-                <!-- </div>
-              <div class="flex flex-col gap-3 pt-10 sm:pt-11"> -->
-                <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors"
-                  >Perumahan Skala Besar</a
-                >
-                <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors">Renovasi Eksklusif</a>
-                <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246] transition-colors">Scaffolding Rental</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-3">
-            <div
-              class="text-sm font-bold text-[#ECC246] font-headline uppercase border-b-2 border-[#ECC246]/50 pb-2 mb-2"
-            >
-              Kantor Pusat
-            </div>
-            <div class="flex gap-3">
-              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">location_on</span>
-              <p class="text-sm text-[#C7B4B4] leading-relaxed">Grha Cantilever, Jl. Sudirman Kav. 50, Jakarta Pusat</p>
-            </div>
-            <!-- <div class="flex gap-3">
-              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">call</span>
-              <p class="text-sm text-[#C7B4B4]">0341-999999</p>
-            </div>
-            <div class="flex gap-3">
-              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">mail</span>
-              <p class="text-sm text-[#C7B4B4]">marketing@cantilever.group</p>
-            </div> -->
-
-            <div
-              class="text-sm font-bold text-[#ECC246] font-headline uppercase border-b-2 border-[#ECC246]/50 pb-2 mb-2 mt-6"
-            >
-              Kantor Cabang
-            </div>
-            <div class="flex gap-3">
-              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">location_on</span>
-              <p class="text-sm text-[#C7B4B4] leading-relaxed">Bojonegoro Creative Hub, Bojonegoro, Jatim</p>
-            </div>
-            <div class="flex gap-3">
-              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">location_on</span>
-              <p class="text-sm text-[#C7B4B4] leading-relaxed">Sengkaling Regency, Dau, Malang</p>
-            </div>
-          </div>
-          <!-- kontak -->
-          <div class="flex flex-col gap-3">
-            <div
-              class="text-sm font-bold text-[#ECC246] font-headline uppercase border-b-2 border-[#ECC246]/50 pb-2 mb-2"
-            >
-              Contact Us
-            </div>
-            <div class="flex gap-3">
-              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">call</span>
-              <p class="text-sm text-[#C7B4B4] leading-relaxed">0341-999999</p>
-            </div>
-            <div class="flex gap-3">
-              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">mail</span>
-              <p class="text-sm text-[#C7B4B4] leading-relaxed">marketing@cantilever.co.id</p>
-            </div>
-            <div class="flex gap-3">
-              <!-- <i class="fa-brands fa-square-whatsapp"></i> -->
-              <span class="material-symbols-outlined text-[#ECC246] text-sm mt-1">mobile_chat</span>
-              <p class="text-sm text-[#C7B4B4] leading-relaxed">WA : 081122334455</p>
-            </div>
-          </div>
+    <!-- Footer -->
+    <footer
+      class="bg-[#0E0E0E] flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full border-t border-[#4D4635]/20"
+    >
+      <div class="flex flex-col items-center md:items-start mb-8 md:mb-0">
+        <div class="text-lg font-bold text-[#ECC246] font-headline uppercase mb-4">Cantilever Group</div>
+        <div class="font-['Inter'] text-sm tracking-wide text-[#C7B4B4]">
+          © 2024 Cantilever Group. ALL RIGHTS RESERVED.
         </div>
-
-        <div class="border-t border-[#4D4635]/20 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div class="text-sm text-[#C7B4B4]">© 2024 Cantilever Group. ALL RIGHTS RESERVED.</div>
-          <div class="flex gap-8 items-center flex-wrap justify-center">
-            <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246]">Privacy Policy</a>
-            <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246]">Terms of Service</a>
-            <a href="#" class="text-sm text-[#C7B4B4] hover:text-[#ECC246]">Cookie Policy</a>
-          </div>
-        </div>
+      </div>
+      <div class="flex gap-8 items-center">
+        <a
+          class="font-['Inter'] text-sm tracking-wide text-[#C7B4B4] hover:text-[#ECC246] hover:underline decoration-2 underline-offset-8 transition-opacity duration-200"
+          href="#"
+          >Privacy Policy</a
+        >
+        <a
+          class="font-['Inter'] text-sm tracking-wide text-[#C7B4B4] hover:text-[#ECC246] hover:underline decoration-2 underline-offset-8 transition-opacity duration-200"
+          href="#"
+          >Terms of Service</a
+        >
+        <a
+          class="font-['Inter'] text-sm tracking-wide text-[#C7B4B4] hover:text-[#ECC246] hover:underline decoration-2 underline-offset-8 transition-opacity duration-200"
+          href="#"
+          >Cookie Policy</a
+        >
+        <a
+          class="font-['Inter'] text-sm tracking-wide text-[#C7B4B4] hover:text-[#ECC246] hover:underline decoration-2 underline-offset-8 transition-opacity duration-200"
+          href="#"
+          >Accessibility</a
+        >
       </div>
     </footer>
   </body>
